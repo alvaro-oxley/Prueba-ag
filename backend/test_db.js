@@ -8,11 +8,22 @@ async function testConnection() {
     console.log('Database:', process.env.MARIADB_DATABASE || 'olap2');
 
     try {
+        // First connect without a database to create it if needed
+        const connectionPre = await mysql.createConnection({
+            host: process.env.MARIADB_HOST || 'localhost',
+            port: process.env.MARIADB_PORT || 3306,
+            user: process.env.MARIADB_USER || 'root',
+            password: process.env.MARIADB_PASSWORD || ''
+        });
+        console.log('Connected to server. Ensuring database "olap2" exists...');
+        await connectionPre.execute('CREATE DATABASE IF NOT EXISTS olap2');
+        await connectionPre.end();
+
         const connection = await mysql.createConnection({
             host: process.env.MARIADB_HOST || 'localhost',
             port: process.env.MARIADB_PORT || 3306,
             user: process.env.MARIADB_USER || 'root',
-            password: process.env.MARIADB_PASSWORD || 'Inicio.01',
+            password: process.env.MARIADB_PASSWORD || '',
             database: process.env.MARIADB_DATABASE || 'olap2'
         });
         console.log('SUCCESS: Connection established!');
