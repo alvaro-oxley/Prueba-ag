@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Detalles from './components/Detalles'
+import logo from './img/logo.svg'
 
 function App() {
     const [data, setData] = useState({ detalles: [], total: 0 });
@@ -21,7 +22,10 @@ function App() {
     return (
         <div className="app-container">
             <header className="main-header">
-                <h1>Programa de Puntos</h1>
+                <div className="header-container">
+                    <img src={logo} alt="Logo" className="header-logo" />
+                    <h1>Programa de Puntos</h1>
+                </div>
             </header>
 
             <main className="content-wrapper">
