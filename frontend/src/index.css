@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #6a1b9a; /* Deep Purple from screenshot */
+  --primary-color: #6a1b9a;
+  /* Deep Purple from screenshot */
   --bg-color: #f3f4f6;
   --card-bg: #ffffff;
   --text-primary: #333;
@@ -87,22 +88,26 @@ body {
 .points-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .points-table th {
-  text-align: left;
+  /* text-align: left; */
+  text-align: center;
   padding: 1rem 1.5rem;
   background-color: #f9fafb;
   color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.875rem;
   border-bottom: 1px solid var(--border-color);
+  width: 33.33%;
 }
 
 .points-table td {
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border-color);
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .points-table tr:last-child td {
@@ -116,7 +121,7 @@ body {
 }
 
 .text-right {
-  text-align: right;
+  /* text-align: right; */
 }
 
 .points-col {
@@ -126,7 +131,8 @@ body {
 
 /* Total Section */
 .total-container {
-  background-color: #e8f5e9; /* Light green bg */
+  background-color: #e8f5e9;
+  /* Light green bg */
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
