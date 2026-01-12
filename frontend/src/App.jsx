@@ -24,7 +24,7 @@ function App() {
             <header className="main-header">
                 <div className="header-container">
                     <img src={logo} alt="Logo" className="header-logo" />
-                    <h1>Programa de Puntos</h1>
+                    {/* <h1>Programa de Puntos</h1> */}
                 </div>
             </header>
 
@@ -35,6 +35,15 @@ function App() {
                     <Detalles detalles={data.detalles} total={data.total} />
                 )}
             </main>
+
+            <div className="back-button-container">
+                <a href="#" className="back-button">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Volver a sitio de revendedora
+                </a>
+            </div>
         </div>
     )
 }

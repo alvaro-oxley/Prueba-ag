@@ -5,7 +5,7 @@ const Detalles = ({ detalles, total }) => {
         <div className="card">
             <div className="card-header">
                 <span className="icon-check">✓</span>
-                <h2>Detalles</h2>
+                <h2>Programa de Puntos</h2>
             </div>
 
             <div className="table-container">
