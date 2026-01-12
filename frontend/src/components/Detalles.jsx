@@ -4,7 +4,7 @@ const Detalles = ({ detalles, total }) => {
     return (
         <div className="card">
             <div className="card-header">
-                <span className="icon-check">✓</span>
+                {/* <span className="icon-check">✓</span> */}
                 <h2>Programa de Puntos</h2>
             </div>
 
@@ -12,7 +12,6 @@ const Detalles = ({ detalles, total }) => {
                 <table className="points-table">
                     <thead>
                         <tr>
-                            <th>ID Motivo</th>
                             <th>Descripción</th>
                             <th className="text-right">Puntos</th>
                         </tr>
@@ -21,14 +20,13 @@ const Detalles = ({ detalles, total }) => {
                         {detalles && Array.isArray(detalles) && detalles.length > 0 ? (
                             detalles.map((item, index) => (
                                 <tr key={index}>
-                                    <td className="id-col">{item.idmotivo}</td>
                                     <td>{item.descripcion}</td>
                                     <td className="text-right points-col">+{item.puntos}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="3" style={{ textAlign: "center" }}>No hay detalles disponibles o hubo un error al cargar.</td>
+                                <td colSpan="2" style={{ textAlign: "center" }}>No hay detalles disponibles o hubo un error al cargar.</td>
                             </tr>
                         )}
                     </tbody>
